@@ -2,28 +2,23 @@ package com.example.maxMin;
 
 import java.util.Scanner;
 
-public class Maximum{
-        public static void main(String[]args){
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Please Enter first Number:");
-        Integer a=new Integer(sc.nextInt());
-        System.out.println("Please Enter second Number:");
-        Integer b=new Integer(sc.nextInt());
-        System.out.println("Please Enter third Number:");
-        Integer c=new Integer(sc.nextInt());
-        System.out.println("Maximum among three number is:"+ maximum(a,b,c));
+public class Maximum {
+        public static void main(String[] args) {
 
-
+                maximum(3,4,1);
+                maximum(1.2f,3.4f,5.6f);
+                maximum("Apple","Peach","Banana");
         }
-        /*
-        @desc: compute  the maximum Integer among three Integer
-        @param: Integer a,b,c
-        @return : int value of Integer
+
+        /**
+         * @desc: compute the maximum among three Comparable objects
+         * @param: T a, b, c (where T extends Comparable<T>)
+         * @return: Maximum of three Comparable objects
          */
-        public static int  maximum(Integer a,Integer b,Integer c){
-        if(a.compareTo(b)>=0 && a.compareTo(c)>=0)return a.intValue();
-        else if(b.compareTo(a)>=0 && b.compareTo(c)>=0)return b.intValue();
-        else return c.intValue();
-
+        public static <T extends Comparable<T>> void maximum(T a, T b, T c) {
+          T res=a;
+          if(b.compareTo(a)>0) res=b;
+          if(c.compareTo(b)>0) res=c;
+                System.out.println("Maximum among " +a +", "+ b+" and "+c +" is: "+ res);
         }
-        }
+}

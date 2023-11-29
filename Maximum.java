@@ -3,20 +3,22 @@ package com.example.maxMin;
 import java.util.Scanner;
 
 public class Maximum {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Please Enter first Number: ");
+        Integer a= new Integer(sc.nextInt());
+        System.out.println("Please Enter second Number: ");
+        Integer b= new Integer(sc.nextInt());
+        System.out.println("Please Enter third Number: ");
+        Integer c= new Integer(sc.nextInt());
+        System.out.println("Maximum among three number is : "+ maximum(a,b,c));
 
 
-        public static void main(String[] args) {
-           Generic G1= new Generic(3,4,1,8,9,11,7);
-           G1.maximumAmongAll();
+    }
+    public static int maximum(Integer a,Integer b,Integer c){
+        if(a.compareTo(b)>=0 && a.compareTo(c)>=0) return a.intValue();
+        else if(b.compareTo(a)>=0 && b.compareTo(c)>=0) return b.intValue();
+        else return c.intValue();
 
-           Generic G2= new Generic(1.2f,3.4f,5.6f,8.9f);
-
-                G2.maximumAmongAll();
-                Generic G3= new Generic("Apple","Peach","Banana");
-                G3.maximumAmongAll();
-                Generic G4= new Generic("Apple","Peach","Banana","Orange");
-                G4.maximumAmongAll();
-        }
-        
+    }
 }
-
